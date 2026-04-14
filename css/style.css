@@ -10,6 +10,8 @@
 /* NUNCA SCROLL HORIZONTAL */
 html, body{
     max-width:100%;
+    margin:0;
+    padding:0;
 }
 /* FONDO GENERAL */
 body{
@@ -133,9 +135,11 @@ img{
 /* CONTENEDOR BOTONES SI / NO */
 .botones{
     display:flex;
-    gap:200px;
+    gap:20px;
     justify-content:center;
     margin-top:auto;   /* los mantiene abajo */
+    align-items:center;
+    flex-wrap:wrap;   /* ⭐ LA CLAVE */ 
 }
 
 /* hace que no ocupen todo el ancho */
@@ -151,15 +155,15 @@ img{
 /* BOTON BACK ROMANTICO */
 .back-btn{
     position:fixed;
-    top:20px;
-    left:20px;
-    width:45px;
-    height:45px;
+    top:env(safe-area-inset-top, 15px);
+    left:15px;
+    width:42px;
+    height:42px;
     border-radius:50%;
     background:rgba(255,255,255,0.15);
     backdrop-filter:blur(10px);
     color:white;
-    font-size:26px;
+    font-size:24px;
     display:flex;
     justify-content:center;
     align-items:center;
