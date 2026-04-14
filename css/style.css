@@ -1,0 +1,204 @@
+/* RESET GLOBAL */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    max-width:100%;
+    
+}
+
+/* NUNCA SCROLL HORIZONTAL */
+html, body{
+    max-width:100%;
+}
+/* FONDO GENERAL */
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;      /* APILA EN VERTICAL */
+    align-items:center;         /* centra horizontal */
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+    width:100%;
+    max-width:700px;
+    margin-left:auto;    /* centra horizontal */
+    margin-right:auto;   /* centra horizontal */
+}
+
+/* CONTENEDOR CENTRAL PARA TODAS LAS PAGINAS */
+body > *{
+    width:100%;
+    max-width:600px;
+    animation:fade 1s ease;
+}
+
+/* TITULOS */
+h1{
+    font-size:2.2rem;
+    margin-bottom:20px;
+    margin-top: 25%;
+}
+
+/* PARRAFOS */
+p{
+    font-size:1.2rem;
+    line-height:1.6;
+    margin-bottom:25px;
+    opacity:0.95;
+}
+
+/* BOTONES */
+button{
+    margin-top:25px;
+    padding:15px 35px;
+    font-size:1.1rem;
+    border:none;
+    border-radius:40px;
+    background:#ff4b7d;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    background:#ff2e6a;
+    box-shadow:0 0 20px rgba(255,75,125,0.6);
+}
+
+/* LINKS SIN ESTILO AZUL */
+a{
+    text-decoration:none;
+    margin-top:auto;
+}
+
+/* IMAGENES */
+img{
+    width:100%;
+    margin:10px 0;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* IMAGENES HORIZONTALES */
+.horizontal{
+    height:250px;
+    object-fit:cover;
+}
+/* IMAGENES TIPO CHAT / STORIES */
+/* CONTENEDOR DE CHATS */
+.chat-imgs{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:14px;
+    margin:25px 0;
+    flex-wrap:wrap; /* si no entran en mobile se apilan */
+}
+
+/* IMAGENES CHAT */
+.chat-imgs img{
+    width:45%;
+    max-width:260px;
+    height:auto;            /* 🔥 importante */
+    object-fit:contain;     /* 🔥 NO RECORTA */
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.35);
+}
+
+.chat-imgs img:hover{
+    transform:scale(1.05);
+}
+
+/* ===== GALERIA EN CUADRICULA ===== */
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(140px,1fr));
+    gap:12px;
+    width:100%;
+    margin:25px 0;
+}
+
+/* fotos dentro de la galeria */
+.galeria img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:18px;
+}
+
+/* CONTENEDOR BOTONES SI / NO */
+.botones{
+    display:flex;
+    gap:200px;
+    justify-content:center;
+    margin-top:auto;   /* los mantiene abajo */
+}
+
+/* hace que no ocupen todo el ancho */
+.botones a{
+    margin-top:0;
+}
+.fin{
+    margin-top: 50%;
+}
+.margen{
+    margin-top: 0%;
+}
+/* BOTON BACK ROMANTICO */
+.back-btn{
+    position:fixed;
+    top:20px;
+    left:20px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    color:white;
+    font-size:26px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    transition:0.3s;
+    z-index:1000;
+}
+
+.back-btn:hover{
+    transform:scale(1.15);
+    background:#ff4b7d;
+}
+/* ANIMACION */
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+@media (max-width:768px){
+    .container{
+        flex-direction:column;
+        text-align:center;
+        padding:40px 25px;
+    }
+
+    .chat-imgs{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .chat-imgs img{
+        width:70%;
+        height:auto;
+        max-height:450px;
+    }
+}
